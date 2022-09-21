@@ -6,8 +6,8 @@ import GL_Reg.eval_metrics as met
 def findHParams(X_noisy,              # The Observed Signal
                 P0,                   # The Observed Regressors
                 L0,                   # The ground truth laplacian
-                x_max = 1,            # The lower bound of the mesh
-                y_max = 1,            # The upper bound of the mesh
+                x_max = 1,            # center x coord of mesh
+                y_max = 1,            # center y coord of mesh
                 epsilon = .9,         # Distance from midpoint to edge of the mesh
                 steps = 3,            # Number of recursive steps
                 maxiter = 3,          # Max number of iterations GL_Reg will perform to learn a laplacian
