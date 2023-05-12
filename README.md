@@ -1,18 +1,13 @@
 # GL_Reg
+
 This repository contains Python package,GL_Reg, used in our paper titled "Graph Learning from Signals with Smoothness Superimposed by Regressors". 
 
 # Required Python Packages
 
-	- [numpy](https://numpy.org/)
-	- [networkx](https://networkx.org/)
-	- [cvxpy](https://www.cvxpy.org/)
-	- [pygsp](https://pygsp.readthedocs.io/en/stable/)
-	- [sklearn](https://scikit-learn.org/stable/)
-	- [scipy](https://scipy.org/)
-	- [matplotlib.pyplot](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
-	- [scipy.io](https://docs.scipy.org/doc/scipy/reference/io.html)
-	- [numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html)
-	- [itertools](https://docs.python.org/3/library/itertools.html)
+[CVXPY](https://www.cvxpy.org/)
+
+[NetworkX](https://networkx.org/)
+
 
 ## NOTE for SKIP: Check if pygsp, scipy.io, and numpy. packages really need to be included.
 

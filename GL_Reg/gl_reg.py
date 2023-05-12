@@ -103,7 +103,7 @@ def optimize_L(hatS, P, beta, w1, w2):
     D = cp.kron(np.identity(n), L)
     objective = cp.Minimize(w1*cp.quad_form(x,D) + w2*(cp.norm(L, 'fro')**2))  ### Change to square 7-5-2022
     prob = cp.Problem(objective, constraints)
-    prob.solve()
+    prob.solve(solver = 'ECOS_BB')
     return(L.value)
 
 # Step 2: Fix L and beta, and update hatS (learned Signal).

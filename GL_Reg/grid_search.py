@@ -12,12 +12,12 @@ def findHParams(X_noisy,              # The Observed Signal
                 steps = 3,            # Number of recursive steps
                 maxiter = 3,          # Max number of iterations GL_Reg will perform to learn a laplacian
                 threshold = 10**(-3), # Threshold for pruning insignificant edges
-                digits = 4):           # How many decimals to keep in coordinates/metric
+                digits = 4,            # How many decimals to keep in coordinates/metric
+                verbose = False):     # Set True to see the path grid search takes 
     # Initializations
-    print( x_max,y_max, )
     bestResult = glr.GSPRegression(X_noisy, P0, x_max,y_max, maxiter, threshold)
     maxMeasure = round(met.metricsprf(L0, bestResult[0])[2], digits)
-    print("Initial F-Measure is " + str(maxMeasure))
+    if verbose: print("Initial F-Measure is " + str(maxMeasure))
     
     # Create the first 
     X = [.01] + [round(x, digits) for x in np.linspace(x_max - epsilon, x_max + epsilon, 5) if x > 0]
@@ -28,14 +28,19 @@ def findHParams(X_noisy,              # The Observed Signal
                 curRes = glr.GSPRegression(X_noisy, P0, x,y, maxiter, threshold)
                 curL = curRes[0]
                 curMeasure = round(met.metricsprf(L0, curL)[2], digits)
-                print("Current F-Measure is " + str(curMeasure) + " for x = " + str(x) + " y = " + str(y))
+                if verbose: print("Current F-Measure is " + str(curMeasure) + " for x = " + str(x) + " y = " + str(y))
                 if curMeasure > maxMeasure:
                     x_max = x
                     y_max = y 
                     bestResult = curRes
                     maxMeasure = curMeasure
-                    print("New max of " + str(maxMeasure) + " at (" + str(x_max) + ", " + str(y_max) +")")
-        print("Step " + str(i+1) + " completed.")
+                    if verbose: print("New max of " + str(maxMeasure) + " at (" + str(x_max) + ", " + str(y_max) +")")
+        if verbose: print("Step " + str(i+1) + " completed.")
         X = [round(i, digits) for i in np.linspace(x_max - epsilon*(.1), x_max + epsilon*(.1), 5) if i > 0]  
         Y = [round(j, digits) for j in np.linspace(y_max - epsilon*(.1), y_max + epsilon*(.1), 5) if j > 0]
+    print("-----------------------------------------")
+    print("              Result                     ")
+    print("-----------------------------------------")
+    print("F-Measure = " + str(maxMeasure) + " at (" + str(x_max) + ", " + str(y_max) + ")")
+
     return([x_max, y_max] + bestResult)

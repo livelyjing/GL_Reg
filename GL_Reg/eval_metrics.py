@@ -1,10 +1,4 @@
 import numpy as np
-import cvxpy as cp
-import matplotlib.pyplot as plt
-from scipy import sparse
-from pygsp import graphs, filters
-from numpy.linalg import inv
-import itertools as it
 from sklearn import metrics
 
 # get the matrix dimension and lower triangular part
