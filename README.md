@@ -44,18 +44,9 @@ F-Measure = 1.0 at (0.01, 0.1)
 
 * If you have jupyter notebook installed, you can explore the demo.ipynb for examples of the various algorithms.
 
-* If you not familiar with jupyter notebook, you can view the code [here]()
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* If you not familiar with jupyter notebook, you can view the code [here](https://github.com/livelyjing/GL_Reg/blob/main/demo.ipynb)
 
 ## Authors
-
-Contributors names and contact info
 
 Skip Moses
 Jing Guo 
@@ -70,5 +61,4 @@ Jing Guo
 
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
-## Acknowledgments
 
