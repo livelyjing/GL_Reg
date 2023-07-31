@@ -1,6 +1,7 @@
 # Graph Learning with Smoothness Superimposed by Regressors
 
 This repository contains a Python package with an implementation of the algorithm described in our paper, "Graph Learning from Signals with Smoothness Superimposed by Regressors."
+
 Please use the following to cite: 
 J. Guo, S. Moses and Z. Wang, "Graph Learning From Signals With Smoothness Superimposed by Regressors," in IEEE Signal Processing Letters, vol. 30, pp. 942-946, 2023, doi: 10.1109/LSP.2023.3298280
 
